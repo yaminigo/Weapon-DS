@@ -1,0 +1,109 @@
+<html>
+    <head>       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="dist/solstice.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+	   <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body ng-app="solr-app" ng-controller="MyController">         
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">DASHBOARD</a>
+                </div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">D3.JS</a>
+                </div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="facet_view.html">FacetView</a>
+                </div>
+            </div>            
+	   </nav>
+    <div class="search_bar" style="">
+        <input type="text" ng-model="searchTerm"/>        
+        <button ng-click="search1()" class="myButton">Search</button>
+        <input checked="checked" type="radio" class="display_type" name="display_type" value="0"/> World Map
+        <input type="radio" class="display_type" name="display_type" value="1"/> Bar Graph
+        <input type="radio" class="display_type" name="display_type" value="2"/> Pie Chart
+        <input type="radio" class="display_type" name="display_type" value="3"/> Heat Map
+        <input type="radio" class="display_type" name="display_type" value="4"/> Indented Tree        
+        <input type="radio" class="display_type" name="display_type" value="5"/> Collapsible Tree       
+    </div>
+    <br/>
+    <br/>
+	<div id="map_data" class=center>
+        <div style="margin-left:30%">
+            <p><strong>Visualizing Weapons Data On World Map (Spatial and Temporal Trend)</strong></p>
+            </br>
+            <input checked="checked" type="radio" class="display_date2" name="display_date2" value="1"/> Jan
+            <input type="radio" class="display_date2" name="display_date2" value="2"/> Feb
+            <input type="radio" class="display_date2" name="display_date2" value="3"/> Mar
+            <input type="radio" class="display_date2" name="display_date2" value="4"/> Apr  
+            <input type="radio" class="display_date2" name="display_date2" value="5"/> May 
+            <input type="radio" class="display_date2" name="display_date2" value="6"/> Jun     
+            <input type="radio" class="display_date2" name="display_date2" value="7"/> Jul
+            <input type="radio" class="display_date2" name="display_date2" value="8"/> Aug
+            <input type="radio" class="display_date2" name="display_date2" value="9"/> Sept
+            <input type="radio" class="display_date2" name="display_date2" value="10"/> Oct        
+            <input type="radio" class="display_date2" name="display_date2" value="11"/> Nov     
+            <input type="radio" class="display_date2" name="display_date2" value="12"/> Dec            
+        </div>    
+    </div>
+    <div id="line_data">
+        <p><strong>Visualizing Weapons ads Temporal Trend for 2015</strong></p>
+        </br>
+    </div>    
+    <div id="piechart">
+        <p><strong>Visualizing Weapons ads Geographical Distribution(Spatial and Temporal Trend)</strong></p>
+        <p>Pie Chart distribution based on Geographic Locations</br>Please hover on the Pie chart for location Name</p>
+        </br>
+        <input checked="checked" type="radio" class="display_date" name="display_date" value="1"/> Jan
+        <input type="radio" class="display_date" name="display_date" value="2"/> Feb
+        <input type="radio" class="display_date" name="display_date" value="3"/> Mar
+        <input type="radio" class="display_date" name="display_date" value="4"/> Apr  
+        <input type="radio" class="display_date" name="display_date" value="5"/> May 
+        <input type="radio" class="display_date" name="display_date" value="6"/> Jun     
+        <input type="radio" class="display_date" name="display_date" value="7"/> Jul
+        <input type="radio" class="display_date" name="display_date" value="8"/> Aug
+        <input type="radio" class="display_date" name="display_date" value="9"/> Sept
+        <input type="radio" class="display_date" name="display_date" value="10"/> Oct        
+        <input type="radio" class="display_date" name="display_date" value="11"/> Nov     
+        <input type="radio" class="display_date" name="display_date" value="12"/> Dec    
+        
+        
+    </div>  
+    <div id="heatmap">
+        <p><strong>Visualizing Weapons ads Temporal Trend using Heat Map</strong></p>        
+        </br>
+        <input checked="checked" type="radio" class="display_month" name="display_month" value="1"/> Jan
+        <input type="radio" class="display_month" name="display_month" value="2"/> Feb
+        <input type="radio" class="display_month" name="display_month" value="3"/> Mar
+        <input type="radio" class="display_month" name="display_month" value="4"/> Apr  
+        <input type="radio" class="display_month" name="display_month" value="5"/> May 
+        <input type="radio" class="display_month" name="display_month" value="6"/> Jun     
+        <input type="radio" class="display_month" name="display_month" value="7"/> Jul
+        <input type="radio" class="display_month" name="display_month" value="8"/> Aug
+        <input type="radio" class="display_month" name="display_month" value="9"/> Sept
+        <input type="radio" class="display_month" name="display_month" value="10"/> Oct        
+        <input type="radio" class="display_month" name="display_month" value="11"/> Nov     
+        <input type="radio" class="display_month" name="display_month" value="12"/> Dec   
+    </div>
+    <div id="collapsibleTree">
+         <p><strong>Inspecting Documents Using Indented Tree</strong></p>        
+        <input type="number" id="start_data"/>
+        <button id="reload">Get next Rows</button>
+        </br>
+    </div>
+    <div id="tree">
+        <p><strong>Inspecting Documents Using Collapsible Tree</strong></p>
+        <input type="number" id="start_data1"/>
+        <button id="reload1">Get next Rows</button>
+        </br>
+    </div>
+    </body>
+</html>

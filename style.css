@@ -1,0 +1,194 @@
+body{
+    
+}
+/*map Data*/
+.graticule {
+	  fill: none;
+	  stroke: #777;
+	  stroke-opacity: .5;
+	  stroke-width: .5px;
+}
+.land {
+	  fill: #6f7f8f;
+}
+.boundary {
+	  fill: none;
+	  stroke: #fff;
+	  stroke-width: .5px;
+}
+#map_data{		
+        padding-top: 10%;
+        position: relative;
+        width:80%;
+}
+
+.navbar{
+    position: fixed;
+    z-index: 1;    
+    width: 100%;
+}
+
+.navbar-brand{
+    cursor: pointer;
+}
+.search_bar{
+    z-index: 1;
+    margin-top: 5%;
+    margin-left:10%;
+    width:80%;
+    position: fixed;
+    background-color:lightgrey;    
+    margin-bottom: 20px;
+    padding:10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+/*bar chart*/
+
+#line_data{		        
+        margin-top: 8%;
+        margin-left:8%;
+        position: relative;
+        top:20%;        
+        height:auto;
+        display:none;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: block;
+}
+
+/*Pie chart*/
+#piechart{		        
+        margin-top: 8%;
+        margin-left:8%;
+        position: relative;
+        top:20%;        
+        height:auto;
+        display:none;
+}
+
+
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+    color: black;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+/*heat map packing*/
+#heatmap{		        
+        margin-top: 8%;
+        margin-left:8%;
+        position: relative;
+        top:20%;        
+        height:auto;
+        display:none;
+}
+
+
+.label {
+  font-weight: bold;
+}
+
+.tile {
+  shape-rendering: crispEdges;
+}
+
+
+/*collapsible tree*/
+#collapsibleTree{		        
+        margin-top: 8%;
+        margin-left:8%;
+        position: relative;
+        top:20%;        
+        height:100%;
+        display:none;
+}
+.node rect {
+		cursor: pointer;
+		fill: #fff;
+		fill-opacity: .5;
+		stroke: #3182bd;
+		stroke-width: 1.5px;
+}
+
+.node text {
+		font: 10px sans-serif;
+		pointer-events: none;
+}
+
+path.link {
+		fill: none;
+		stroke: #9ecae1;
+		stroke-width: 1.5px;
+}
+
+/*tree*/
+#tree{		        
+        margin-top: 8%;
+        margin-left:8%;
+        position: relative;
+        top:20%;        
+        height:100%;
+        display:none;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+
+
+/*Facet view*/
+.facet-view-simple{
+    width:100%;
+    height:auto;
+    margin:20px auto 0 auto;
+}
+
